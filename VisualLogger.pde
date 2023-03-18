@@ -5,13 +5,16 @@ import     processing.serial.*;
 
 
 //Objects
-
-
+serial_port serial_left = new serial_port();
+serial_port serial_rght = new serial_port();
 
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 
 {
   size( 800, 850 );
+  
+  serial_left.update();
+  serial_rght.update();
 }
 
 

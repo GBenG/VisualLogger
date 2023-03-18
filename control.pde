@@ -16,10 +16,11 @@ void control_group(String name, int x, int y)
   stroke(txcolor);
   rect( x-1, y-30, 170+1, 50);
   
-  if(Button("", x+5, y-25, 20, 20, 7)){
+
+  if(Button("", x+30, y-25, 20, 20, 7)){
     btn_click(name,"+");
   }
-  if(Button("", x+30, y-25, 20, 20, 7)){
+  if(Button("", x+5, y-25, 20, 20, 7)){
     btn_click(name,"-");
   }
   
@@ -32,12 +33,13 @@ void control_group(String name, int x, int y)
   textSize(20);
   fill(txcolor);
   textAlign(LEFT, CENTER);
-  text("+", x+11, y-18);
-  text("-", x+37, y-18);
+  text("+", x+36, y-18);
+  text("-", x+12, y-18);
+
   textAlign(CENTER, CENTER);
   
   if( name == "LEFT" ){
-    text("COM22", x+85, y-17);
+    text(serial_left.get(), x+85, y-17);
   }else{
     text("COM33", x+85, y-17);
   }
@@ -48,14 +50,18 @@ void control_group(String name, int x, int y)
 void btn_click(String name, String dir){
   if( name == "LEFT" ){
       if( dir == "+" ){
+        serial_left.inc();
         println("L+");
       }else{
+        serial_left.dec();
         println("L-");
       }
   }else{
       if( dir == "+" ){
+        serial_rght.inc();
         println("R+");
       }else{
+        serial_rght.dec();
         println("R-");
       }
   }
