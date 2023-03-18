@@ -95,6 +95,37 @@
     return false;
   }
 
+  //Roundstyle Text Button
+  public boolean Button(String text, int x, int y, int w, int h, int r) {
+
+    if (mouseX >= x && mouseX <= x+w && 
+      mouseY >= y && mouseY <= y+h) {
+      fill(c_hover);
+      rect(x, y, w, h, r);
+      fill(c_text_color);
+      textSize(15);
+      textAlign(CENTER, CENTER);
+      text(text, x, y, w, h);
+      if (clicked && canClick) {
+        fill(c_light);
+        rect(x, y, w, h, r);
+        text(text, x, y, w, h);
+        canClick = false;
+        return true;
+      }
+    } else {
+      fill(c_light);
+      rect(x, y, w, h, r);
+      fill(c_text_color);
+      textSize(15);
+      textAlign(CENTER, CENTER);
+      text(text, x, y, w, h);
+      return false;
+    }
+
+    return false;
+  }
+
   //Basic Text Button
   boolean Button(String text, int x, int y) {
     return Button(text, x, y, s_med, s_height);

@@ -15,21 +15,20 @@ void draw()
 {
   background(bgcolor);
   
-  if(Button("", 10, height-40, 30, 30)){
+  if(Button("", 10, height-40, 30, 30, 15)){
     println("+");
   }
-  if(Button("", 160, height-40, 30, 30)){
+  if(Button("", 45, height-40, 30, 30, 15)){
     println("-");
   }
-  if(Button("Connect", 195, height-40, 80, 30)){
-    println("C");
-  }
+  Toggle(true, 195, height-40);
   
   textSize(35);
   fill(txcolor);
   textAlign(LEFT, CENTER);
   text("+", 17, height-32);
-  text("-", 170, height-32);
+  text("-", 54, height-32);
   textAlign(CENTER, CENTER);
-  text("COM1", 100, height-32);
+  text("COM2", 137, height-32);
+  
 }  
