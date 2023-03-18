@@ -8,6 +8,9 @@ Serial myPort;  // Create object from Serial class
 serial_port serial_left = new serial_port();
 serial_port serial_rght = new serial_port();
 
+String text_area_left = ""; 
+String text_area_rght = ""; 
+
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 
 {
@@ -29,4 +32,10 @@ void draw()
   control_watermark();
   control_group("LEFT", 0, height);
   control_group("RIGHT", width-170, height);
+  
+  textSize(8);
+  fill(txcolor);
+  textAlign(LEFT);
+  text(text_area_left, 50, 50, 300, 500);
+  text(text_area_rght, width/2+50, 50, 300, 500);
 }  

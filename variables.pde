@@ -38,6 +38,9 @@ class serial_port{
   String get_name(){
     return serial_list;
   }
+  Serial get_port(){
+    return serial_port;
+  }
   Boolean get(){
     return serial_connection;
   }
