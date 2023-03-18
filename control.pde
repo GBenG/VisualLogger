@@ -25,9 +25,9 @@ void control_group(String name, int x, int y)
   }
   
   if( name == "LEFT" ){
-    com_lft = Toggle(com_lft, x+120, y-25, 40, 20 );
+    serial_left.set(Toggle(serial_left.get(), x+120, y-25, 40, 20 ));
   }else{
-    com_rgt = Toggle(com_rgt, x+120, y-25, 40, 20 );
+    serial_rght.set(Toggle(serial_rght.get(), x+120, y-25, 40, 20 ));
   }
   
   textSize(20);
@@ -39,9 +39,9 @@ void control_group(String name, int x, int y)
   textAlign(CENTER, CENTER);
   
   if( name == "LEFT" ){
-    text(serial_left.get(), x+85, y-17);
+    text(serial_left.get_name(), x+85, y-17);
   }else{
-    text("COM33", x+85, y-17);
+    text(serial_rght.get_name(), x+85, y-17);
   }
   
 }
@@ -51,18 +51,18 @@ void btn_click(String name, String dir){
   if( name == "LEFT" ){
       if( dir == "+" ){
         serial_left.inc();
-        println("L+");
       }else{
         serial_left.dec();
-        println("L-");
       }
   }else{
       if( dir == "+" ){
         serial_rght.inc();
-        println("R+");
       }else{
         serial_rght.dec();
-        println("R-");
       }
   }
+}
+
+Serial open_port(String port_name, int port_speed){
+    return new Serial(this, port_name, port_speed);
 }

@@ -2,7 +2,7 @@
 import     java.io.BufferedWriter;
 import     java.io.FileWriter;
 import     processing.serial.*;
-
+Serial myPort;  // Create object from Serial class
 
 //Objects
 serial_port serial_left = new serial_port();
@@ -15,6 +15,9 @@ void setup()
   
   serial_left.update();
   serial_rght.update();
+  
+  String portName = Serial.list()[0];
+  myPort = new Serial(this, portName, 9600);
 }
 
 
