@@ -19,7 +19,8 @@ void setup()
 void draw() 
 {
   background(bgcolor);
-  text("SPS :: 2023", width/2, height-32);
+  
+  control_watermark();
   control_group("LEFT", 0, height);
-  control_group("RIGHT", width-265, height);
+  control_group("RIGHT", width-170, height);
 }  

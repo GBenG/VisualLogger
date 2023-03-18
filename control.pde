@@ -1,36 +1,45 @@
 Boolean com_lft = false;
 Boolean com_rgt = false;
 
+void control_watermark(){
+  fill(bgcolor);
+  stroke(txcolor);
+  rect( 0, height-30, width, 30);
+  fill(txcolor);
+  text("SPS :: 2023", width/2, height-17);
+}
+
+
 void control_group(String name, int x, int y) 
 {
   fill(bgcolor);
   stroke(txcolor);
-  rect( x-1, y-50, 265+1, 50);
+  rect( x-1, y-30, 170+1, 50);
   
-  if(Button("", x+10, y-40, 30, 30, 15)){
+  if(Button("", x+5, y-25, 20, 20, 7)){
     btn_click(name,"+");
   }
-  if(Button("", x+45, y-40, 30, 30, 15)){
+  if(Button("", x+30, y-25, 20, 20, 7)){
     btn_click(name,"-");
   }
   
   if( name == "LEFT" ){
-    com_lft = Toggle(com_lft, x+195, y-40);
+    com_lft = Toggle(com_lft, x+120, y-25, 40, 20 );
   }else{
-    com_rgt = Toggle(com_rgt, x+195, y-40);
+    com_rgt = Toggle(com_rgt, x+120, y-25, 40, 20 );
   }
   
-  textSize(35);
+  textSize(20);
   fill(txcolor);
   textAlign(LEFT, CENTER);
-  text("+", x+17, y-32);
-  text("-", x+54, y-32);
+  text("+", x+11, y-18);
+  text("-", x+37, y-18);
   textAlign(CENTER, CENTER);
   
   if( name == "LEFT" ){
-    text("COM2", x+137, y-32);
+    text("COM22", x+85, y-17);
   }else{
-    text("COM3", x+137, y-32);
+    text("COM33", x+85, y-17);
   }
   
 }
@@ -50,5 +59,4 @@ void btn_click(String name, String dir){
         println("R-");
       }
   }
-    
 }
