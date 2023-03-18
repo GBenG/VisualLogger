@@ -1,0 +1,3 @@
+[submodule "cards_ui"]
+	path = cards_ui
+	url = https://github.com/lucascassiano/cards_ui.git
