@@ -3,10 +3,15 @@ import     java.io.BufferedWriter;
 import     java.io.FileWriter;
 import     processing.serial.*;
 
+
+//Objects
+
+
+
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 
 {
-  size( 800, 450 );
+  size( 800, 850 );
 }
 
 
@@ -14,21 +19,7 @@ void setup()
 void draw() 
 {
   background(bgcolor);
-  
-  if(Button("", 10, height-40, 30, 30, 15)){
-    println("+");
-  }
-  if(Button("", 45, height-40, 30, 30, 15)){
-    println("-");
-  }
-  Toggle(true, 195, height-40);
-  
-  textSize(35);
-  fill(txcolor);
-  textAlign(LEFT, CENTER);
-  text("+", 17, height-32);
-  text("-", 54, height-32);
-  textAlign(CENTER, CENTER);
-  text("COM2", 137, height-32);
-  
+  text("SPS :: 2023", width/2, height-32);
+  control_group("LEFT", 0, height);
+  control_group("RIGHT", width-265, height);
 }  
