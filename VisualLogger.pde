@@ -10,11 +10,11 @@ serial_port serial_rght = new serial_port();
 
 flow flow_control = new flow();
 
+side side_left = new side();
+side side_rght = new side();
+
 //String text_area_left = ""; 
 //String text_area_rght = ""; 
-
-String[]  array_left = new String[0];
-String[]  array_rght = new String[0];
 
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 
@@ -38,17 +38,22 @@ void draw()
   control_group("LEFT", 0, height);
   control_group("RIGHT", width-170, height);
   
-  textSize(8);
+//-------------------------------------------------------- 
+  textSize(15);
   fill(txcolor);
   textAlign(LEFT);
-  //text(text_area_left, 50, 50, 300, 500);
-  //text(text_area_rght, width/2+50, 50, 300, 500);
-  float x = 50;
-  float y = 50;
+
   float lineHeight = textAscent() + textDescent();
+  float y = 50;
   
-  for (String str : array_left) {
-    text(str, x, y);
+  for (String str : side_left.get()) {
+    text(str, 50, y);
     y += lineHeight;
   }
+  y = 50;
+  for (String str : side_rght.get()) {
+    text(str, width/2+50, y);
+    y += lineHeight;
+  }
+//--------------------------------------------------------  
 }  

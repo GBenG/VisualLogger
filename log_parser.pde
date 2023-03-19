@@ -12,27 +12,33 @@ class flow{
   flow() {
     flow_dir = Direction.WAIT_FLOW;
   } 
+  
+  //Set new direction
   void set(Direction _dir){
     if(flow_dir != _dir){
-      //Print sequence container
-      println("################");
-      printArray(array);
-      println("^^^^^^^^^^^^^^^^");
       
-      //Release sequence container (DRAFT)
-      array_left = new String[0];
-      arrayCopy(array_left,array);
-      array_left = concat(array_left, array);
-      
+      //Release sequence container
+      if(flow_dir == Direction.LEFT_FLOW){
+        println("LEFT>");
+        side_left.update(array);
+      }else{
+        println("RIGHT>");
+        side_rght.update(array);
+      }
+
       //Reset sequence container
       array = new String[0];
       flow_dir = _dir;
       sequence = 0;
     }
   }
+  
+  //Get current direction
   Direction get(){
     return flow_dir;
   }
+  
+  //Add income string to temporary container
   void add(String _str){
     array = append(array, _str);
     sequence++;
