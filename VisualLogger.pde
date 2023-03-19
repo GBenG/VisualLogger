@@ -19,7 +19,7 @@ side side_rght = new side();
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 
 {
-  size( 800, 850 );
+  size( 1000, 850 );
   
   serial_left.update();
   serial_rght.update();
@@ -37,14 +37,28 @@ void draw()
   control_watermark();
   control_group("LEFT", 0, height);
   control_group("RIGHT", width-170, height);
+//--------------------------------------------------------    
+  textSize(20);
+  fill(bgcolor);
   
+  
+  float lineHeight = textAscent() + textDescent();
+  float y = 50;
+  
+  int leftMargin = 50;
+  int topMargin = 50;
+  
+  stroke(orng_out);
+  rect(leftMargin - 15, topMargin - 25, getLongestStringWidth(side_left.get()), lineHeight * side_left.get().length + lineHeight + 15, 20);
+  stroke(blue_out);
+  leftMargin = width/2+50;
+  rect(leftMargin - 15, topMargin - 25, getLongestStringWidth(side_rght.get()), lineHeight * side_rght.get().length + lineHeight + 15, 20);
 //-------------------------------------------------------- 
   textSize(15);
   fill(txcolor);
-  textAlign(LEFT);
+  textAlign(LEFT,TOP);
 
-  float lineHeight = textAscent() + textDescent();
-  float y = 50;
+
   
   for (String str : side_left.get()) {
     text(str, 50, y);
@@ -56,4 +70,4 @@ void draw()
     y += lineHeight;
   }
 //--------------------------------------------------------  
-}  
+}
