@@ -4,6 +4,11 @@
   **************************************************************************************************
 **/
 void control_watermark(){
+  //Draw frame devider heree too 
+  stroke(txcolor);
+  line(width/2,0,width/2,height);
+  
+  //Draw watermark
   textSize(20);
   fill(bgcolor);
   stroke(txcolor);

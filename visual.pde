@@ -5,6 +5,5 @@ float getLongestStringWidth(String[] array){
       longestString = array[i];
     }
   }
-  println("LONGEST:"+longestString+"["+longestString.length()+"]["+textWidth(longestString)+"px]");
   return textWidth(longestString);
 }
