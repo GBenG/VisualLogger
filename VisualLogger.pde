@@ -10,8 +10,11 @@ serial_port serial_rght = new serial_port();
 
 flow flow_control = new flow();
 
-String text_area_left = ""; 
-String text_area_rght = ""; 
+//String text_area_left = ""; 
+//String text_area_rght = ""; 
+
+String[]  array_left = new String[0];
+String[]  array_rght = new String[0];
 
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 
@@ -38,6 +41,14 @@ void draw()
   textSize(8);
   fill(txcolor);
   textAlign(LEFT);
-  text(text_area_left, 50, 50, 300, 500);
-  text(text_area_rght, width/2+50, 50, 300, 500);
+  //text(text_area_left, 50, 50, 300, 500);
+  //text(text_area_rght, width/2+50, 50, 300, 500);
+  float x = 50;
+  float y = 50;
+  float lineHeight = textAscent() + textDescent();
+  
+  for (String str : array_left) {
+    text(str, x, y);
+    y += lineHeight;
+  }
 }  

@@ -13,14 +13,22 @@ class flow{
     flow_dir = Direction.WAIT_FLOW;
   } 
   void set(Direction _dir){
-    //Print sequence container
-    println("################");
-    printArray(array);
-    println("^^^^^^^^^^^^^^^^");
-    //Reset sequence container
-    array = new String[0];
-    flow_dir = _dir;
-    sequence = 0;
+    if(flow_dir != _dir){
+      //Print sequence container
+      println("################");
+      printArray(array);
+      println("^^^^^^^^^^^^^^^^");
+      
+      //Release sequence container (DRAFT)
+      array_left = new String[0];
+      arrayCopy(array_left,array);
+      array_left = concat(array_left, array);
+      
+      //Reset sequence container
+      array = new String[0];
+      flow_dir = _dir;
+      sequence = 0;
+    }
   }
   Direction get(){
     return flow_dir;
