@@ -1,15 +1,23 @@
-Boolean com_lft = false;
-Boolean com_rgt = false;
-
+/**
+  **************************************************************************************************
+  * @brief      My watermark
+  **************************************************************************************************
+**/
 void control_watermark(){
+  textSize(20);
   fill(bgcolor);
   stroke(txcolor);
+  textAlign(CENTER, CENTER);
   rect( 0, height-30, width, 30);
   fill(txcolor);
   text("SPS :: 2023", width/2, height-17);
 }
 
-
+/**
+  **************************************************************************************************
+  * @brief      Draw a group of serial control buttons
+  **************************************************************************************************
+**/
 void control_group(String name, int x, int y) 
 {
   fill(bgcolor);
@@ -46,7 +54,11 @@ void control_group(String name, int x, int y)
   
 }
 
-
+/**
+  **************************************************************************************************
+  * @brief      Button click handler
+  **************************************************************************************************
+**/
 void btn_click(String name, String dir){
   if( name == "LEFT" ){
       if( dir == "+" ){
@@ -63,6 +75,11 @@ void btn_click(String name, String dir){
   }
 }
 
+/**
+  **************************************************************************************************
+  * @brief      "new Serial()" cаll wrap
+  **************************************************************************************************
+**/
 Serial open_port(String port_name, int port_speed){
     return new Serial(this, port_name, port_speed);
 }

@@ -8,9 +8,8 @@ color       cncolor     = color( 117, 113, 94 );
 color       txcolor     = #747983;
 
 
-//Serial port
+//Serial port class
 class serial_port{ 
-  public
     Boolean     serial_connection = false;
     Serial      serial_port = null;             // the serial port
     String      serial_list;                    // list of serial ports

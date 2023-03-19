@@ -8,6 +8,8 @@ Serial myPort;  // Create object from Serial class
 serial_port serial_left = new serial_port();
 serial_port serial_rght = new serial_port();
 
+flow flow_control = new flow();
+
 String text_area_left = ""; 
 String text_area_rght = ""; 
 
