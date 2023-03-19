@@ -54,13 +54,17 @@ class serial_port{
           if(serial_port != null){
             serial_port.bufferUntil('\n');
             serial_port.clear();
+          }else{
+            serial_connection = false;
           }
         }
       }else{
-        println(serial_list+" Disconnect");
-        serial_port.clear();
-        serial_port.stop();
-        serial_port = null;
+        if(serial_port != null){
+          println(serial_list+" Disconnect");
+          serial_port.clear();
+          serial_port.stop();
+          serial_port = null;
+        }
       }
     }
   }
