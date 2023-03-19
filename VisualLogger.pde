@@ -5,13 +5,13 @@ import     processing.serial.*;
 
 
 //Objects
-serial_port serial_left = new serial_port();
-serial_port serial_rght = new serial_port();
+Serial_port serial_left = new Serial_port();
+Serial_port serial_rght = new Serial_port();
 
-flow flow_control = new flow();
+Flow flow_control = new Flow();
 
-side side_left = new side();
-side side_rght = new side();
+Side side_left = new Side();
+Side side_rght = new Side();
 
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 

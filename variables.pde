@@ -11,14 +11,14 @@ color       blue_out    = #0083cd;
 
 
 //Serial port class
-class serial_port{ 
+class Serial_port{ 
     Boolean     serial_connection = false;
     Serial      serial_port = null;             // the serial port
     String      serial_list;                    // list of serial ports
     int         serial_list_index = 0;          // currently selected serial port 
     int         num_serial_ports = 0;           // number of serial ports in the l
     int         serial_speed = 115200;
-  serial_port(){  
+  Serial_port(){  
   } 
   
   //Update serial ports list
@@ -88,9 +88,9 @@ class serial_port{
 
 
 //Side class
-class side{ 
+class Side{ 
   String[]  container = new String[0];
-  side(){
+  Side(){
   }
   void update(String[] _arr){
     container = new String[0];

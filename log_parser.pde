@@ -5,11 +5,11 @@ enum Direction{
   RIGHT_FLOW
 }
 // Declare a class of flow control
-class flow{ 
+class Flow{ 
     int       sequence = 0;
     Direction flow_dir;
     String[]  array = new String[0];
-  flow() {
+  Flow() {
     flow_dir = Direction.WAIT_FLOW;
   } 
   
