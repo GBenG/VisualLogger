@@ -81,5 +81,11 @@ void btn_click(String name, String dir){
   **************************************************************************************************
 **/
 Serial open_port(String port_name, int port_speed){
-    return new Serial(this, port_name, port_speed);
+  Serial res = null;
+  try {
+    res = new Serial(this, port_name, port_speed);
+  }catch(Exception e){
+    println("Error opening serial port " + port_name + ": " + e.getMessage());
+  }
+  return res;
 }

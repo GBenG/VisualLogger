@@ -51,8 +51,10 @@ class serial_port{
         println(serial_list+" Connect");
         if(serial_port == null){
           serial_port = open_port(Serial.list()[serial_list_index], serial_speed);       // connect to the selected serial port
-          serial_port.bufferUntil('\n');
-          serial_port.clear();
+          if(serial_port != null){
+            serial_port.bufferUntil('\n');
+            serial_port.clear();
+          }
         }
       }else{
         println(serial_list+" Disconnect");
