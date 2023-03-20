@@ -48,11 +48,11 @@ class Belt{
 
     float lineHeight = textAscent() + textDescent();
     int y = 50;
-    
+
     for(int i = 0; i < cur_index; i++){
       if(box[i].container.length != 0){
         if( box[i].flow_dir == Direction.LEFT_FLOW ){
-          
+
           leftMargin = 50;
           y = 50;
           
@@ -65,9 +65,9 @@ class Belt{
             text(str, 50, y);
             y += lineHeight;
           }
-          
-        }else if( box[cur_index].flow_dir == Direction.RIGHT_FLOW ){
-          
+        }
+        if( box[i].flow_dir == Direction.RIGHT_FLOW ){
+
           leftMargin = width/2+50;
           y = 50;
           
