@@ -8,10 +8,16 @@ import     processing.serial.*;
 Serial_port serial_left = new Serial_port();
 Serial_port serial_rght = new Serial_port();
 
+//Main objects
 Flow flow_control = new Flow();
+Belt belt = new Belt();
 
+//Obsolete
 Side side_left = new Side();
 Side side_rght = new Side();
+
+//Jst class test
+Rectangle sq = new Rectangle( 200, 200, 15, 15, #747983, #f89300 ); 
 
 //----------------------------------------------------------------------------------------------------------------------
 void setup() 
@@ -35,17 +41,20 @@ void draw()
 
   float lineHeight = textAscent() + textDescent();
   float y = 50;
-  
+
   int leftMargin = 50;
   int topMargin = 50;
   if(side_left.get().length != 0){
     stroke(orng_out);
-    rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_left.get())+20, lineHeight * side_left.get().length+10, 10);
+    rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_left.get())+20, lineHeight*side_left.get().length+10, 10);
+    line((leftMargin-10+getLongestStringWidth(side_left.get())+20),topMargin-5+(lineHeight*side_left.get().length+10)/2,width/2,topMargin-5+(lineHeight*side_left.get().length+10)/2);
   }
   if(side_rght.get().length != 0){
     stroke(blue_out);
     leftMargin = width/2+50;
-    rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_rght.get())+20, lineHeight * side_rght.get().length+10, 10);
+    rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_rght.get())+20, lineHeight*side_rght.get().length+10, 10);
+    line(width/2,topMargin-5+(lineHeight*side_rght.get().length+10)/2,(leftMargin-10),topMargin-5+(lineHeight*side_rght.get().length+10)/2);
+
   }
 //-------------------------------------------------------- 
 //TODO: Move it into visual tab
