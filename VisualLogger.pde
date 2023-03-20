@@ -42,20 +42,22 @@ void draw()
   float lineHeight = textAscent() + textDescent();
   float y = 50;
 
-  int leftMargin = 50;
-  int topMargin = 50;
-  if(side_left.get().length != 0){
-    stroke(orng_out);
-    rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_left.get())+20, lineHeight*side_left.get().length+10, 10);
-    line((leftMargin-10+getLongestStringWidth(side_left.get())+20),topMargin-5+(lineHeight*side_left.get().length+10)/2,width/2,topMargin-5+(lineHeight*side_left.get().length+10)/2);
-  }
-  if(side_rght.get().length != 0){
-    stroke(blue_out);
-    leftMargin = width/2+50;
-    rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_rght.get())+20, lineHeight*side_rght.get().length+10, 10);
-    line(width/2,topMargin-5+(lineHeight*side_rght.get().length+10)/2,(leftMargin-10),topMargin-5+(lineHeight*side_rght.get().length+10)/2);
+  belt.draw();
 
-  }
+  //int leftMargin = 50;
+  //int topMargin = 50;
+  //if(side_left.get().length != 0){
+  //  stroke(orng_out);
+  //  rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_left.get())+20, lineHeight*side_left.get().length+10, 10);
+  //  line((leftMargin-10+getLongestStringWidth(side_left.get())+20),topMargin-5+(lineHeight*side_left.get().length+10)/2,width/2,topMargin-5+(lineHeight*side_left.get().length+10)/2);
+  //}
+  //if(side_rght.get().length != 0){
+  //  stroke(blue_out);
+  //  leftMargin = width/2+50;
+  //  rect(leftMargin-10, topMargin-5, getLongestStringWidth(side_rght.get())+20, lineHeight*side_rght.get().length+10, 10);
+  //  line(width/2,topMargin-5+(lineHeight*side_rght.get().length+10)/2,(leftMargin-10),topMargin-5+(lineHeight*side_rght.get().length+10)/2);
+
+  //}
 //-------------------------------------------------------- 
 //TODO: Move it into visual tab
   fill(orng_out);
