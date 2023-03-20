@@ -12,8 +12,17 @@ class Belt{
   int   new_index  = 0;
   int   leftMargin = 50;
   int   topMargin  = 50;
+  int   position   = 0;
   Belt(){
     box[0] = new Box();
+  }
+  void inc_pos(){
+    position += 10;
+  }
+  void dec_pos(){
+    if( position >= 10 ){
+      position -= 10;
+    }
   }
   void update(String[] _arr, Direction _dir){
     
@@ -58,15 +67,15 @@ class Belt{
         if( box[i].flow_dir == Direction.LEFT_FLOW ){
 
           leftMargin = 50;
-          y = 50+box[i].offset;
+          y = -position+50+box[i].offset;
           
           stroke(orng_out);
           noFill();
-          rect(leftMargin-10, topMargin-5+box[i].offset, getLongestStringWidth(box[i].container)+20, lineHeight*box[i].container.length+10, 10);
+          rect(leftMargin-10, -position+topMargin-5+box[i].offset, getLongestStringWidth(box[i].container)+20, lineHeight*box[i].container.length+10, 10);
           line((leftMargin-10+getLongestStringWidth(box[i].container)+20),
-                topMargin-5+box[i].offset+(box[i].container.length+10)/2,
+                -position+topMargin-5+box[i].offset+(lineHeight*box[i].container.length+10)/2,
                 width/2,
-                topMargin-5+box[i].offset+(box[i].container.length+10)/2);
+                -position+topMargin-5+box[i].offset+(lineHeight*box[i].container.length+10)/2);
  
           fill(orng_out);
           for (String str : box[i].container) {
@@ -78,15 +87,15 @@ class Belt{
         if( box[i].flow_dir == Direction.RIGHT_FLOW ){
 
           leftMargin = width/2+50;
-          y = 50+box[i].offset;
+          y = -position+50+box[i].offset;
           
           stroke(blue_out);
           noFill();
-          rect(leftMargin-10, topMargin-5+box[i].offset, getLongestStringWidth(box[i].container)+20, lineHeight*box[i].container.length+10, 10);
+          rect(leftMargin-10, -position+topMargin-5+box[i].offset, getLongestStringWidth(box[i].container)+20, lineHeight*box[i].container.length+10, 10);
           line(width/2,
-              topMargin-5+box[i].offset+(lineHeight*box[i].container.length+10)/2,
+              -position+topMargin-5+box[i].offset+(lineHeight*box[i].container.length+10)/2,
               (leftMargin-10),
-              topMargin-5+box[i].offset+(lineHeight*box[i].container.length+10)/2);
+              -position+topMargin-5+box[i].offset+(lineHeight*box[i].container.length+10)/2);
 
           fill(blue_out);
           for (String str : box[i].container) {
