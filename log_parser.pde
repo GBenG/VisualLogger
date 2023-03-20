@@ -1,15 +1,10 @@
-// Declare an enum with the possible flows
-enum Direction{
-  WAIT_FLOW,
-  LEFT_FLOW,
-  RIGHT_FLOW
-}
+
 // Declare a class of flow control
-class flow{ 
+class Flow{ 
     int       sequence = 0;
     Direction flow_dir;
     String[]  array = new String[0];
-  flow() {
+  Flow() {
     flow_dir = Direction.WAIT_FLOW;
   } 
   
@@ -20,10 +15,10 @@ class flow{
       //Release sequence container
       if(flow_dir == Direction.LEFT_FLOW){
         println("LEFT>");
-        side_left.update(array);
+        belt.update(array,flow_dir); 
       }else{
         println("RIGHT>");
-        side_rght.update(array);
+        belt.update(array,flow_dir); 
       }
 
       //Reset sequence container
