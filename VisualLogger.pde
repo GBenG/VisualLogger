@@ -73,3 +73,12 @@ void draw()
   control_group("RIGHT", width-170, height);
 //--------------------------------------------------------  
 }
+
+void mouseWheel(MouseEvent event) {
+  if(event.getCount() > 0){
+    belt.inc_pos();
+  }
+  if(event.getCount() < 0){
+    belt.dec_pos();
+  }
+}
