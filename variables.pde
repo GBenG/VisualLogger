@@ -16,23 +16,3 @@ enum Direction{
   LEFT_FLOW,
   RIGHT_FLOW
 }
-
-
-//Side class
-class Side{ 
-  String[]  container = new String[0];
-  Side(){
-  }
-  void update(String[] _arr){
-    container = new String[0];
-    container = concat(container, _arr);
-    
-    //Print sequence container
-    println("################");
-    printArray(container);
-    println("^^^^^^^^^^^^^^^^");   
-  }
-  String[] get(){
-    return container;
-  }
-}

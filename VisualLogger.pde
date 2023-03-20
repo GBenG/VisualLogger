@@ -12,10 +12,6 @@ Serial_port serial_rght = new Serial_port();
 Flow flow_control = new Flow();
 Belt belt = new Belt();
 
-//Obsolete
-Side side_left = new Side();
-Side side_rght = new Side();
-
 //Jst class test
 Rectangle sq = new Rectangle( 200, 200, 15, 15, #747983, #f89300 ); 
 
@@ -60,17 +56,17 @@ void draw()
   //}
 //-------------------------------------------------------- 
 //TODO: Move it into visual tab
-  fill(orng_out);
-  for (String str : side_left.get()) {
-    text(str, 50, y);
-    y += lineHeight;
-  }
-  y = 50;
-  fill(blue_out);
-  for (String str : side_rght.get()) {
-    text(str, width/2+50, y);
-    y += lineHeight;
-  }
+  //fill(orng_out);
+  //for (String str : side_left.get()) {
+  //  text(str, 50, y);
+  //  y += lineHeight;
+  //}
+  //y = 50;
+  //fill(blue_out);
+  //for (String str : side_rght.get()) {
+  //  text(str, width/2+50, y);
+  //  y += lineHeight;
+  //}
 //--------------------------------------------------------
   control_watermark();
   control_group("LEFT", 0, height);

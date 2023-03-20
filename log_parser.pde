@@ -15,11 +15,9 @@ class Flow{
       //Release sequence container
       if(flow_dir == Direction.LEFT_FLOW){
         println("LEFT>");
-        side_left.update(array);
         belt.update(array,flow_dir); 
       }else{
         println("RIGHT>");
-        side_rght.update(array);
         belt.update(array,flow_dir); 
       }
 
